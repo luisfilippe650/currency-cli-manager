@@ -7,7 +7,6 @@
   <img src="https://img.shields.io/badge/Status-Active-success">
 </p>
 
-
 A simple command-line application built with **Python** that manages currencies, fetches **real-time exchange rates**, and stores exchange history in a **MySQL database**.
 
 The application allows users to interact through CLI commands to perform operations like adding currencies, listing them, converting values, and tracking historical data.
@@ -25,7 +24,6 @@ This project was created for **learning purposes** to practice backend developme
 * Requests
 * argparse
 * mysql-connector-python
-* python-dotenv
 
 ---
 
@@ -35,59 +33,99 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/SEU_USUARIO/currency-cli-manager.git
+```
 
 Enter the project folder:
 
+```bash
 cd currency-cli-manager
+```
 
 Create a virtual environment:
 
+```bash
 python -m venv .venv
+```
 
 Activate the environment.
 
 Linux / Mac:
 
+```bash
 source .venv/bin/activate
+```
 
 Windows:
 
+```bash
 .venv\Scripts\activate
+```
 
 Install the dependencies:
 
+```bash
 pip install -r requirements.txt
-Environment Configuration
+```
 
-Create a .env file in the root directory:
+---
 
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=yourpassword
-DB_NAME=currency_db
-DB_PORT=3307
-
-API_KEY=your_api_key
-Running the Application
+# Running the Application
 
 Run the CLI:
 
+```bash
 python app/main.py
-Commands
-Add a currency
+```
+
+---
+
+# Commands
+
+## Add a currency
+
+```bash
 python app/main.py add USD
-List currencies
+```
+
+---
+
+## List currencies
+
+```bash
 python app/main.py list
-Delete a currency
+```
+
+---
+
+## Delete a currency
+
+```bash
 python app/main.py delete 1
-Convert currency
+```
+
+---
+
+## Convert currency
+
+```bash
 python app/main.py convert USD BRL
-Show history
+```
+
+---
+
+## Show history
+
+```bash
 python app/main.py history
-Database
+```
+
+---
+
+# Database
 
 Example tables used in the project:
 
+```sql
 CREATE TABLE currencies (
     id INT AUTO_INCREMENT PRIMARY KEY,
     code VARCHAR(10) NOT NULL UNIQUE
@@ -100,25 +138,22 @@ CREATE TABLE exchange_history (
     rate DECIMAL(10,4),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-Learning Goals
+```
+
+---
+
+# Learning Goals
 
 This project was created to practice:
 
-CLI application development with Python
+* CLI application development with Python
+* API consumption using Requests
+* Database integration with MySQL
+* Project structure organization
+* Backend development fundamentals
 
-API consumption using Requests
+---
 
-Database integration with MySQL
-
-Environment variables management
-
-Project structure organization
-
-Backend development fundamentals
-
-Author
+# Author
 
 Luis Filippe Reis Nogueira
-
-🔥 adaptar isso pra **ficar mais chamativo ainda (tipo o de projetos grandes)**  
-🔥 ou criar um **segundo projeto igual, mas em FastAPI (nível estágio forte)**
