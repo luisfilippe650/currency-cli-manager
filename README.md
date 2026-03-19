@@ -81,10 +81,10 @@ python app/main.py
 
 # Commands
 
-## Add a currency
+## Add currency
 
 ```bash
-python app/main.py add USD
+python app/main.py moeda add --nome USD
 ```
 
 ---
@@ -92,23 +92,23 @@ python app/main.py add USD
 ## List currencies
 
 ```bash
-python app/main.py list
+python app/main.py moeda list
 ```
 
 ---
 
-## Delete a currency
+## Delete currency
 
 ```bash
-python app/main.py delete 1
+python app/main.py moeda delete --id 1
 ```
 
 ---
 
-## Convert currency
+## Get exchange rate
 
 ```bash
-python app/main.py convert USD BRL
+python app/main.py cotacao --nome USD
 ```
 
 ---
@@ -116,11 +116,17 @@ python app/main.py convert USD BRL
 ## Show history
 
 ```bash
-python app/main.py history
+python app/main.py historico list
 ```
 
 ---
 
+## Delete history
+
+```bash
+python app/main.py historico delete
+```
+---
 # Database
 
 Example tables used in the project:
