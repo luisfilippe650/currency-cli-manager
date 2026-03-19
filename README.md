@@ -1,4 +1,4 @@
-# 💱 Currency CLI Manager
+# Currency CLI Manager 💱
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python">
@@ -7,93 +7,59 @@
   <img src="https://img.shields.io/badge/Status-Active-success">
 </p>
 
----
 
-## 📌 Overview
+A simple command-line application built with **Python** that manages currencies, fetches **real-time exchange rates**, and stores exchange history in a **MySQL database**.
 
-**Currency CLI Manager** is a command-line application built with **Python** that allows users to manage currencies, fetch real-time exchange rates, and store exchange history in a **MySQL database**.
+The application allows users to interact through CLI commands to perform operations like adding currencies, listing them, converting values, and tracking historical data.
 
-This project was designed to simulate a real backend system, focusing on clean architecture, modularization, and integration with external APIs.
-
----
-
-## 🎯 Purpose
-
-This project demonstrates practical experience in:
-
-- Backend development with Python  
-- API consumption and data processing  
-- Relational database modeling (MySQL)  
-- CLI application development  
-- Environment variable management  
-- Containerization using Docker  
+This project was created for **learning purposes** to practice backend development, API consumption, and database integration.
 
 ---
 
-## 🚀 Features
+# Technologies Used
 
-- ➕ Add currencies to the database  
-- 📄 List all saved currencies  
-- ❌ Delete currencies by ID  
-- 💱 Fetch real-time exchange rates  
-- 🕓 Automatically store exchange history  
-- 📊 View exchange history  
-- 🗑️ Delete exchange history  
-
----
-
-## 🛠️ Technologies Used
-
-- Python 3  
-- MySQL  
-- Docker & Docker Compose  
-- argparse  
-- requests  
-- mysql-connector-python  
-- python-dotenv  
+* Python
+* MySQL
+* Docker
+* Docker Compose
+* Requests
+* argparse
+* mysql-connector-python
+* python-dotenv
 
 ---
 
-## 🧠 Architecture
+# Installation
 
-The project follows a layered architecture:
+Clone the repository:
 
-- **Config Layer** → Handles CLI input and commands  
-- **Core Layer** → Database connection  
-- **CRUD Layer** → Data persistence  
-- **Service Layer** → External API integration  
-- **Main** → Application entry point  
+```bash
+git clone https://github.com/SEU_USUARIO/currency-cli-manager.git
 
-This structure ensures better scalability and maintainability.
+Enter the project folder:
 
----
+cd currency-cli-manager
 
-## 📁 Project Structure
+Create a virtual environment:
 
+python -m venv .venv
 
-currency-cli-manager/
-│
-├── app/
-│ ├── config/
-│ ├── core/
-│ ├── crud/
-│ │ ├── cotacao_crud.py
-│ │ └── historic_crud.py
-│ ├── services/
-│ └── main.py
-│
-├── docker-compose.yml
-├── Dockerfile
-├── requirements.txt
-└── .env
+Activate the environment.
 
+Linux / Mac:
 
----
+source .venv/bin/activate
 
-## ⚙️ Environment Variables
+Windows:
 
-Create a `.env` file:
+.venv\Scripts\activate
 
+Install the dependencies:
+
+pip install -r requirements.txt
+Environment Configuration
+
+Create a .env file in the root directory:
 
 DB_HOST=localhost
 DB_USER=root
@@ -102,35 +68,26 @@ DB_NAME=currency_db
 DB_PORT=3307
 
 API_KEY=your_api_key
+Running the Application
 
+Run the CLI:
 
-> ⚠️ Using port `3307` avoids conflicts with local MySQL.
-
----
-
-## 🐳 Running with Docker
-
-
-docker-compose up --build
-
-
----
-
-## 💻 Running Locally
-
-
-python -m venv .venv
-source .venv/bin/activate
-
-pip install -r requirements.txt
 python app/main.py
+Commands
+Add a currency
+python app/main.py add USD
+List currencies
+python app/main.py list
+Delete a currency
+python app/main.py delete 1
+Convert currency
+python app/main.py convert USD BRL
+Show history
+python app/main.py history
+Database
 
+Example tables used in the project:
 
----
-
-## 🗄️ Database Schema
-
-```sql
 CREATE TABLE currencies (
     id INT AUTO_INCREMENT PRIMARY KEY,
     code VARCHAR(10) NOT NULL UNIQUE
@@ -143,40 +100,25 @@ CREATE TABLE exchange_history (
     rate DECIMAL(10,4),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-💻 Usage
-Add currency
-python app/main.py add USD
-List currencies
-python app/main.py list
-Delete currency
-python app/main.py delete 1
-Convert currency
-python app/main.py convert USD BRL
-Show history
-python app/main.py history
-📊 Example Output
-Currency: USD → BRL
-Rate: 5.12
-Saved successfully in history
-📈 Future Improvements
+Learning Goals
 
-Transform CLI into a REST API (FastAPI)
+This project was created to practice:
 
-Add Redis caching
+CLI application development with Python
 
-Implement logging system
+API consumption using Requests
 
-Add unit and integration tests
+Database integration with MySQL
 
-Improve error handling
+Environment variables management
 
-👨‍💻 Author
+Project structure organization
+
+Backend development fundamentals
+
+Author
 
 Luis Filippe Reis Nogueira
 
-🔗 LinkedIn:
-https://www.linkedin.com/in/luis-filippe-reis-nogueira-244111355/
-
-⭐ Final Note
-
-This project represents a solid backend foundation, applying real-world concepts such as API integration, database persistence, and modular architecture.
+🔥 adaptar isso pra **ficar mais chamativo ainda (tipo o de projetos grandes)**  
+🔥 ou criar um **segundo projeto igual, mas em FastAPI (nível estágio forte)**
